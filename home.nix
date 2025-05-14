@@ -9,6 +9,7 @@
   #programs.home-manager.enable = true;
   programs.bash.enable = true;
   programs.lsd.enable = true;
+  programs.lazydocker.enable = true;
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
