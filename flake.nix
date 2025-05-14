@@ -9,21 +9,18 @@
       # <-- Esto asegura que home-manager use el mismo nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
       let
+	system = builtins.currentSystem;
         pkgs = import nixpkgs { inherit system; };
       in {
-        homeConfigurations."${system}" =
+        homeConfigurations.default =
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [ ./home.nix ];
           };
-      }
-    );
+      };
 }
 
