@@ -40,6 +40,9 @@
 
   # Shell aliases
   home.shellAliases = {
+    # List aliases
+    l = "ls -la";
+    
     # Docker compose aliases
     dc = "docker compose";
     dcud = "dc up -d";
