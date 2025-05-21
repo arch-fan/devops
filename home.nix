@@ -8,6 +8,7 @@
   # Program section
   #programs.home-manager.enable = true;
   programs.bash.enable = true;
+  programs.bat.enable = true;
   programs.lsd.enable = true;
   programs.lazydocker.enable = true;
   programs.starship = {
@@ -35,6 +36,7 @@
       nixd
       docker-compose-language-service
       dockerfile-language-server-nodejs
+      yaml-language-server
     ];
   };
 
