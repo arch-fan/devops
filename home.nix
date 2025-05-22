@@ -5,6 +5,10 @@
   home.username      = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
+  home.file."~/.config/nix/nix.conf".text = ''
+    experimental-features = nix-command flakes
+  '';
+
   # Program section
   #programs.home-manager.enable = true;
   programs.bash.enable = true;
