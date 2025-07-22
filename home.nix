@@ -9,6 +9,10 @@
     experimental-features = nix-command flakes
   '';
 
+  home.packages = with pkgs; [
+    argocd
+  ];
+
   # Program section
   #programs.home-manager.enable = true;
   programs.bash.enable = true;
@@ -59,6 +63,9 @@
     ga = "git add";
     gcm = "git commit -m";
     gst = "git status";
+
+    # Kubernetes
+    k = "kubectl";
   };
 
   # Session variables
