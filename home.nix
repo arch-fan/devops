@@ -11,16 +11,21 @@
 
   home.packages = with pkgs; [
     argocd
-    fastfetch
   ];
 
   # Program section
   #programs.home-manager.enable = true;
-  programs.bash.enable = true;
   programs.lazygit.enable = true;
   programs.bat.enable = true;
   programs.lsd.enable = true;
   programs.lazydocker.enable = true;
+  programs.ripgrep.enable = true;
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      fastfetch
+    '';
+  };
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -48,6 +53,12 @@
       dockerfile-language-server-nodejs
       yaml-language-server
     ];
+  };
+  programs.fastfetch = {
+    enable = true;
+    #settings = {
+    #  
+    #};
   };
 
   # Shell aliases
