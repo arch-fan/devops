@@ -56,10 +56,14 @@
   };
   programs.fastfetch = {
     enable = true;
-    #settings = {
-    #  
-    #};
+    settings = {
+      logo = {
+        source = "./config/art/sharingan.ascii"
+      };  
+    };
   };
+
+  home.file.".config/art/sharingan.ascii".source = config.lib.file.mkOutOfStoreSymlink "./sharingan.ascii";
 
   # Shell aliases
   home.shellAliases = {
