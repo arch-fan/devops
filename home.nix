@@ -58,7 +58,7 @@
     enable = true;
     settings = {
       logo = {
-        source = "./config/art/sharingan.ascii"
+        source = "./config/art/sharingan.ascii";
       };  
     };
   };
