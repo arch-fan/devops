@@ -1,5 +1,9 @@
 { ... }:
 {
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
   programs.bat.enable = true;
   programs.lsd.enable = true;
   programs.ripgrep.enable = true;

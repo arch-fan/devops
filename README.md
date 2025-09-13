@@ -1,6 +1,10 @@
 # Setup
 
-Run 
+Run first time
 ```sh
-nix run .#<host>.homeConfigurations.default.activationPackage
+nix run --experimental-features 'nix-command flakes' .#<host>.homeConfigurations.default.activationPackage
+```
+
+Then
+```home-manager switch .#<host>
 ```
