@@ -12,15 +12,18 @@
   };
 
   outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
-      let
-	system = builtins.currentSystem;
-        pkgs = import nixpkgs { inherit system; };
-      in {
-        homeConfigurations.default =
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [ ./home.nix ];
+       {
+        homeConfigurations = {
+          vortex = home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs { system = "x86_64-linux"; };
+            modules = [ ./vortex.nix ];
           };
+
+          raspberrypi = home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs { system = "aarch64"; };
+            modules = [ ./raspberrypi.nix ];
+          };
+        }; 
       };
 }
 
