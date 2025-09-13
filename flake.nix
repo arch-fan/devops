@@ -16,12 +16,12 @@
         homeConfigurations = {
           vortex = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs { system = "x86_64-linux"; };
-            modules = [ ./vortex.nix ];
+            modules = [ ./hosts/vortex.nix ];
           };
 
           raspberrypi = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs { system = "aarch64-linux"; };
-            modules = [ ./raspberrypi.nix ];
+            modules = [ ./hosts/raspberrypi.nix ];
           };
         }; 
       };
