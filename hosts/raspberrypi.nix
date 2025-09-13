@@ -12,6 +12,11 @@
     enable = true;
   };
 
+  home.shellAliases = {
+    # Kubernetes
+    p = "podman";
+  };
+
   home.packages = with pkgs; [
     docker-compose
   ];
