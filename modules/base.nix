@@ -29,9 +29,6 @@
     ga = "git add";
     gcm = "git commit -m";
     gst = "git status";
-
-    # Kubernetes
-    k = "kubectl";
   };
 
   # Session variables

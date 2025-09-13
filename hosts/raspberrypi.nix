@@ -9,6 +9,10 @@
   home.homeDirectory = "/home/juan";
 
   services.podman = {
-    enable = true;      
+    enable = true;
   };
+
+  home.packages = with pkgs; [
+    docker-compose
+  ];
 }
