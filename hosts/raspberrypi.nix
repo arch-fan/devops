@@ -7,4 +7,8 @@
   ];
   home.username      = "juan";
   home.homeDirectory = "/home/juan";
+
+  services.podman = {
+    enable = true;      
+  };
 }
