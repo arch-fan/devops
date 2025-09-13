@@ -6,24 +6,22 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      # <-- Esto asegura que home-manager use el mismo nixpkgs
+      # Esto asegura que home-manager use el mismo nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
-       {
-        homeConfigurations = {
-          vortex = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs { system = "x86_64-linux"; };
-            modules = [ ./hosts/vortex.nix ];
-          };
-
-          raspberrypi = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs { system = "aarch64-linux"; };
-            modules = [ ./hosts/raspberrypi.nix ];
-          };
-        }; 
+  outputs = { self, nixpkgs, home-manager, flake-utils, ... }: {
+    homeConfigurations = {
+      vortex = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [ ./hosts/vortex.nix ];
       };
-}
 
+      raspberrypi = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        modules = [ ./hosts/raspberrypi.nix ];
+      };
+    };
+  };
+}
